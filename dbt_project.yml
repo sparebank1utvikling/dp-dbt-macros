@@ -1,0 +1,9 @@
+name: 'dp-dbt-macros'
+version: '0.3.1'
+config-version: 2
+
+macro-paths: ["macros"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
