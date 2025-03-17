@@ -19,7 +19,7 @@ In addition, you have to overwrite the config in `dbt_project.yml`:
 ```yaml
 dispatch:
   - macro_namespace: dbt
-    search_order: ['dope_dbt_macros', 'dbt']
+    search_order: ['dp_dbt_macros', 'dbt']
 ```
 
 
