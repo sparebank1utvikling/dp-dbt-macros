@@ -11,7 +11,7 @@ Use the `Git Packages` method as described in [dbt Cloud docs](https://docs.getd
 ```yaml
 packages:
   - git: "https://github.com/sparebank1utvikling/dp-dbt-macros.git" # git URL
-    revision: 0.3.1 # tag, branch name or full commit hash
+    revision: 0.3.2 # tag, branch name or full commit hash
 ```
 
 In addition, you have to overwrite the config in `dbt_project.yml`:
@@ -22,6 +22,7 @@ dispatch:
     search_order: ['dp_dbt_macros', 'dbt']
 ```
 
+> Tag 0.3.1 is not working. Use 0.3.2 or higher.
 
 ## Versions
 This repository uses `tags` and not Github Releases. Codeowners recommend to use tag or commit hash as revsion value when referencing this repository. 
