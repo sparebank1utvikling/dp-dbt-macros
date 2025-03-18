@@ -1,4 +1,4 @@
-name: 'dp-dbt-macros'
+name: 'dp_dbt_macros'
 version: '0.3.1'
 config-version: 2
 
