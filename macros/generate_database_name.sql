@@ -1,9 +1,14 @@
-{% macro default__generate_database_name(custom_database_name=none, node=none) -%}
+{% macro generate_database_name(custom_database_name=none, node=none) -%}
+
+    {#
+        Sikrer at databaser i Snowflake får navn på formen <prosjekt-prefix>__<workspace>__<database>.
+    #}
 
     {%- set default_database = target.database -%}
 
-    {%- set snowflake_prefix = var("snowflake_prefix", target.name.split("__")[0]) -%}
-    {%- set workspace_name = target.name.split("__")[1] -%}
+    {%- set snowflake_prefix = var("snowflake_prefix") -%}
+
+    {%- set workspace_name = target.name -%}
 
     {%- if custom_database_name is none -%}
 
