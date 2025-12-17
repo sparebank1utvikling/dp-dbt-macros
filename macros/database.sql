@@ -5,6 +5,7 @@
     
   {%- call statement('create_or_replace_database') -%}
     CALL DATAPLATTFORM.{{ project_name }}.CREATE_OR_REPLACE_DATABASE(
+      CURRENT_ROLE(),
       '{{ full_database_name }}',
       ARRAY_CONSTRUCT('{{ project_name }}_NON_PROD_ROLE')
     )
@@ -24,6 +25,7 @@
     
   {%- call statement('create_database') -%}
     CALL DATAPLATTFORM.{{ project_name }}.CREATE_DATABASE(
+      CURRENT_ROLE(),
       '{{ full_database_name }}',
       ARRAY_CONSTRUCT('{{ project_name }}_NON_PROD_ROLE')
     )
@@ -43,6 +45,7 @@
     
   {%- call statement('drop_database') -%}
     CALL DATAPLATTFORM.{{ project_name }}.DROP_DATABASE(
+      CURRENT_ROLE(),
       '{{ full_database_name }}'
     )
   {% endcall %}
